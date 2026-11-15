@@ -183,7 +183,7 @@ function buildSphere(names) {
   box.addEventListener('pointerleave', () => { tx = 0.003; ty = 0.004; });
   (function tick() {
     ax += (tx - ax) * .05; ay += (ty - ay) * .05;
-    const R = box.clientWidth * 0.4, cx = Math.cos(ax), sx = Math.sin(ax), cy = Math.cos(ay), sy = Math.sin(ay);
+    const R = box.clientWidth * (box.clientWidth < 420 ? 0.34 : 0.4), cx = Math.cos(ax), sx = Math.sin(ax), cy = Math.cos(ay), sy = Math.sin(ay);
     for (const p of pts) {
       let y = p.y * cx - p.z * sx, z = p.y * sx + p.z * cx; p.y = y; p.z = z;
       let x = p.x * cy + p.z * sy; z = -p.x * sy + p.z * cy; p.x = x; p.z = z;
@@ -321,6 +321,15 @@ function contact3D() {
 
 /* ---------------- INTERACTIONS ---------------- */
 let lenis;
+// mobile menu: lock page scroll while it is open
+function setMenu(open) {
+  const nav = $('#nav');
+  if (nav.classList.contains('open') === open) return;
+  nav.classList.toggle('open', open);
+  $('#burger').setAttribute('aria-expanded', open);
+  document.documentElement.style.overflow = open ? 'hidden' : '';
+  if (!$('#modal').classList.contains('open')) open ? lenis?.stop() : lenis?.start();
+}
 function smoothScroll() {
   if (reduced || typeof Lenis === 'undefined') return;
   lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
@@ -328,7 +337,7 @@ function smoothScroll() {
   gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
   $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
     const id = a.getAttribute('href'); if (id.length < 2) return;
-    e.preventDefault(); $('#nav').classList.remove('open'); lenis.scrollTo(id, { offset: -60, duration: 1.6 });
+    e.preventDefault(); setMenu(false); lenis.scrollTo(id, { offset: -60, duration: 1.6 });
   }));
 }
 
@@ -399,7 +408,12 @@ function paintGrad() {
 function animations() {
   // nav + progress
   ScrollTrigger.create({ start: 60, end: 'max', onUpdate: s => { $('#nav').classList.toggle('scrolled', s.scroll() > 60); gsap.set('#progress', { scaleX: s.progress }); } });
-  $('#burger').addEventListener('click', () => $('#nav').classList.toggle('open'));
+  const nav = $('#nav'), burger = $('#burger');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  $$('#navLinks a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) setMenu(false); });
+  matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
   $$('section[id]').forEach(sec => ScrollTrigger.create({
     trigger: sec, start: 'top 50%', end: 'bottom 50%',
     onToggle: s => s.isActive && $$('.nav__links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + sec.id))

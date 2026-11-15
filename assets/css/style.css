@@ -218,7 +218,34 @@ img{max-width:100%;display:block}
 .footer{position:relative;z-index:2;display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:30px 5vw;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 
 /* responsive */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+.hero{min-height:100svh}
+.contact{min-height:90svh}
+.modal__card{max-height:88dvh}
+.projects__grid{grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr))}
+.btn{max-width:100%;text-align:center;overflow-wrap:anywhere}
+.about__text,.skills__list,.job__card,.project{min-width:0}
+/* keep content readable on very wide screens */
+:where(.section)>:where(:not(canvas)){max-width:1440px;margin-inline:auto;width:100%}
+.hero__content{margin-inline-end:auto}
+@media (min-width:1800px){
+  .hero{padding-inline:max(5vw,calc((100vw - 1440px)/2))}
+  .nav{padding-inline:max(5vw,calc((100vw - 1440px)/2))}
+}
+/* no sticky hover effects on touch devices */
+@media (hover:none){
+  .skill:hover,[dir=rtl] .skill:hover,.job__card:hover{transform:none}
+  .project:hover .project__media img{transform:none}
+}
+/* tablets / small laptops: tighter nav */
+@media (max-width:1100px){
+  .nav__links{gap:22px}
+  .section{padding:110px 5vw}
+}
 @media (max-width:980px){
+  .section__head{margin-bottom:50px}
+  .skills__sphere{max-width:460px}
   .about__grid,.skills__grid{grid-template-columns:1fr}
   .about__photo{max-width:380px;margin:auto}
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -226,20 +253,86 @@ img{max-width:100%;display:block}
   .job,.job:nth-of-type(odd){width:100%;margin-inline-start:0;padding-block:0 40px;padding-inline:44px 0}
   .job__dot,.job:nth-of-type(odd) .job__dot{inset-inline-start:1px;inset-inline-end:auto}
 }
+/* mobile menu from 900px down (links + CV + lang no longer fit) */
+@media (max-width:900px){
+  .nav__links{position:fixed;inset:0;height:100vh;height:100dvh;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:rgba(7,7,12,.97);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .4s,visibility .4s}
+  .nav__links a{font:600 clamp(24px,7vw,34px) "Space Grotesk","Cairo";color:var(--text);padding:6px 16px}
+  .nav.open .nav__links{opacity:1;visibility:visible;pointer-events:auto}
+  /* backdrop-filter would trap the fixed overlay inside the header bar */
+  .nav.open,.nav.open.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:transparent;border-bottom-color:transparent}
+  .nav__burger{display:block;z-index:2;width:40px;height:40px}
+  .nav__burger span{left:4px;width:32px}
+  .nav__burger span:first-child{top:14px}.nav__burger span:last-child{bottom:14px}
+  .nav.open .nav__burger span:first-child{top:19px}
+  .nav.open .nav__burger span:last-child{bottom:19px}
+  .nav__logo{position:relative;z-index:2}
+}
 @media (max-width:760px){
+  .nav{padding:16px 16px}
+  .nav.scrolled{padding:12px 16px}
+  .section__head{margin-bottom:36px;gap:12px}
+  .marquee{padding:16px 0;margin:10px 0 20px}
+  .marquee__track,.marquee__track span{gap:36px}
+  .hero__eyebrow{font-size:12px}
+  .hero__desc{font-size:16px;margin-bottom:30px}
+  .hero__cta .btn{flex:1 1 auto}
+  .hero__scroll{display:none}
+  .lead{margin-bottom:26px}
+  .about__facts li{flex-wrap:wrap}
+  .stats{gap:10px}
+  .stat{padding:18px 14px;border-radius:16px}
+  .skills__grid{gap:30px}
+  .skill{padding:16px 18px}
+  .job__card{padding:20px}
+  .job__role{font-size:19px}
+  .job__desc{font-size:14.5px}
+  .project{min-height:0}
+  .project__body{padding:22px}
+  .project__title{font-size:21px}
+  .project__media{height:170px}
+  .filters{gap:8px;margin-bottom:28px}
+  .filters button{padding:8px 14px}
+  .modal{padding:10px;align-items:end}
+  .modal__card{max-height:92dvh;border-radius:22px}
+  .modal__card .project__media{height:190px}
+  .modal__card .project__desc{font-size:15px}
+  .contact{min-height:auto;padding-block:100px}
+  .contact__sub{font-size:16px;margin-bottom:34px}
+  .contact__links{flex-direction:column;align-items:stretch;max-width:420px;margin-inline:auto}
+  .footer{padding:24px 16px 90px}
   #hero3d{opacity:.55}
   #contact3d{opacity:.45}
   .hero__desc{text-shadow:0 2px 14px rgba(7,7,12,.9)}
-  .nav__links{position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:30px;background:rgba(7,7,12,.96);backdrop-filter:blur(16px);opacity:0;pointer-events:none;transition:opacity .4s}
-  .nav__links a{font:600 30px "Space Grotesk","Cairo";color:var(--text)}
-  .nav.open .nav__links{opacity:1;pointer-events:auto}
-  .nav__burger{display:block;z-index:2}
   .nav__actions .btn--small{display:none}
-  .section{padding:90px 16px}
-  .hero{padding:110px 16px 80px}
-  .projects__grid{grid-template-columns:1fr}
+  .section{padding:80px 16px}
+  .hero{padding:100px 16px 70px}
+  .projects__grid{grid-template-columns:1fr;gap:18px}
   .about__badge{right:10px}
   .skills__sphere span{font-size:12px}
+}
+/* small phones */
+@media (max-width:400px){
+  .hero__title{font-size:clamp(38px,12vw,46px)}
+  [dir=rtl] .hero__title{font-size:clamp(34px,11vw,42px)}
+  .section__title{font-size:clamp(32px,9.5vw,38px)}
+  .contact__title{font-size:clamp(32px,10vw,40px)}
+  .hero__cta .btn{flex-basis:100%}
+  .btn{padding:14px 22px}
+  .stat__num{font-size:28px}
+  .stat__label{font-size:12px}
+  .project__art{font-size:56px}
+  .skills__sphere span{font-size:11px}
+  .about__badge{font-size:12px;padding:10px 14px;bottom:20px}
+}
+/* phones in landscape / short screens */
+@media (max-height:520px) and (orientation:landscape){
+  .hero{min-height:auto;padding-block:90px 50px}
+  .hero__title{font-size:clamp(36px,7vw,64px);margin:16px 0 14px}
+  .hero__scroll{display:none}
+  .nav__links{gap:14px}
+  .nav__links a{font-size:22px}
+  .modal__card{max-height:94dvh}
+  .modal__card .project__media{height:150px}
 }
 /* RTL / Arabic */
 [dir=rtl] body{font-family:"Cairo",Inter,system-ui,sans-serif}
