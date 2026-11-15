@@ -48,12 +48,10 @@ function applyI18n() {
   $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
   $$('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
   const b = $('#langToggle');
+  // a real, crawlable link; the inline <head> script saves the choice from ?lang=
+  const next = RTL ? 'en' : 'ar';
   b.textContent = t('switchTo'); b.setAttribute('aria-label', t('switchLabel')); b.title = t('switchLabel');
-  b.addEventListener('click', () => {
-    const next = RTL ? 'en' : 'ar';
-    try { localStorage.setItem('lang', next); } catch (e) {}
-    const u = new URL(location.href); u.searchParams.set('lang', next); location.href = u.toString();
-  });
+  b.href = './?lang=' + next; b.hreflang = next; b.lang = next;
 }
 const WA_ICON = '<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3Zm0 23.8c-2.02 0-4-.54-5.72-1.57l-.41-.24-3.96 1.04 1.06-3.86-.27-.4A10.76 10.76 0 0 1 5.2 16c0-5.97 4.86-10.82 10.84-10.82S26.86 10.03 26.86 16 22 26.8 16.04 26.8Zm5.94-8.1c-.33-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.74.17-.22.32-.85 1.06-1.04 1.28-.19.22-.38.24-.71.08-.33-.16-1.38-.51-2.63-1.62-.97-.87-1.63-1.94-1.82-2.27-.19-.33-.02-.5.14-.67.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.94-.79 2.21-1.56.27-.77.27-1.42.19-1.56-.08-.14-.3-.22-.63-.38Z"/></svg>';
 
@@ -71,8 +69,8 @@ function render(d) {
   const fields = { name: lp.name, shortName: lp.shortName, location: lp.location, education: lp.education, military: lp.military, about,
     aboutShort: about.split(/(?<=[.!?؟])\s/)[0] || '' };
   $$('[data-field]').forEach(el => { el.textContent = fields[el.dataset.field] ?? ''; });
-  document.title = `${lp.shortName || lp.name} — ${lp.title}`;
-  $('#photo').alt = lp.name || '';
+  document.title = `${lp.shortName || lp.name} — ${lp.title} | ${RTL ? 'PHP و Laravel' : 'PHP & Laravel'}`;
+  $('#photo').alt = `${lp.name || ''} — ${lp.title || ''}`;
   if (p.photo) $('#photo').src = p.photo;
   const cv = p.cvHidden ? '' : p.cv; // temporarily hidden from the dashboard (Profile → Files)
   $$('[data-cv]').forEach(a => { if (cv) a.href = cv; else a.remove(); });
@@ -92,9 +90,10 @@ function render(d) {
   $('#skillsList').innerHTML = skills.map(s => `
     <div class="skill"><div class="skill__top"><div><span class="skill__name">${esc(s.name)}</span><span class="skill__cat mono">${esc(s.category || '')}</span></div>
     <span class="skill__pct mono">${+s.level}%</span></div><div class="skill__bar"><span data-w="${+s.level}"></span></div></div>`).join('');
-  buildSphere(d.skills.map(s => s.name).concat(['Git', 'Redis', 'Queues', 'Docker', 'Firebase', 'Google Maps', 'OOP', 'SOLID', 'JSON', 'Linux']));
+  buildSphere(d.skills.map(s => s.name).filter(n => innerWidth > 760 || n.length <= 18).concat(['Git', 'Redis', 'Queues', 'Docker', 'Firebase', 'Google Maps', 'OOP', 'SOLID', 'JSON', 'Linux']));
 
   // experience
+  $$('#timeline .job').forEach(j => j.remove()); // replace the server-rendered copy
   const when = v => /^present$/i.test(String(v).trim()) ? t('present') : v;
   $('#timeline').insertAdjacentHTML('beforeend', d.experience.map(L).map(j => `
     <div class="job"><span class="job__dot"></span><div class="job__card">

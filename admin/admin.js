@@ -87,6 +87,10 @@
         ${input('WhatsApp number (with country code)', 'profile.whatsapp', 'tel', 'placeholder="2010xxxxxxxx"')}
         ${input('LinkedIn URL', 'profile.linkedin', 'url')}${input('GitHub URL', 'profile.github', 'url')}
       </div></div>
+      <div class="card"><h2>SEO</h2><div class="grid">
+        ${input('Website URL (your domain)', 'profile.siteUrl', 'url', 'placeholder="https://mohamedgalal.com"')}
+        <p class="muted small f--full">Used for Google (canonical, sitemap) and link previews on WhatsApp / LinkedIn / Facebook. Leave empty to auto-detect. Title &amp; description come from your Title and About fields.</p>
+      </div></div>
       <div class="card"><h2>Files</h2><div class="grid">
         ${fileInput('Profile photo', 'profile.photo', 'image/*')}${fileInput('CV (PDF)', 'profile.cv', 'application/pdf')}
         <label class="f f--check f--full"><input type="checkbox" data-path="profile.cvHidden" ${get('profile.cvHidden') ? 'checked' : ''}> Hide CV from the website (download button + link)</label>
