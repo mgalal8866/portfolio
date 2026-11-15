@@ -17,7 +17,7 @@ const I18N = {
   en: {
     'nav.about': 'About', 'nav.skills': 'Skills', 'nav.experience': 'Experience', 'nav.projects': 'Projects', 'nav.contact': 'Contact',
     cv: 'Download CV','hero.hi': "Hi, I'm", 'hero.work': 'View my work', 'hero.talk': "Let's talk", 'hero.scroll': 'scroll',
-    'about.title': 'About me', 'about.location': 'Location', 'about.education': 'Education', 'about.military': 'Military',
+    'about.title': 'About me', 'about.location': 'Location', 'about.military': 'Military',
     'skills.title': 'Skills & Stack', 'experience.title': 'Experience', 'projects.title': 'Selected Projects',
     'contact.title': 'Let\'s build something <span class="grad">great</span> together.',
     'contact.sub': 'Have a project in mind or need a solid Laravel backend? My inbox is open.',
@@ -28,7 +28,7 @@ const I18N = {
   ar: {
     'nav.about': 'عنّي', 'nav.skills': 'المهارات', 'nav.experience': 'الخبرات', 'nav.projects': 'المشاريع', 'nav.contact': 'تواصل',
     cv: 'تحميل السيرة الذاتية','hero.hi': 'أهلًا، أنا', 'hero.work': 'شاهد أعمالي', 'hero.talk': 'يلا نتكلم', 'hero.scroll': 'مرّر',
-    'about.title': 'نبذة عنّي', 'about.location': 'الموقع', 'about.education': 'التعليم', 'about.military': 'الخدمة العسكرية',
+    'about.title': 'نبذة عنّي', 'about.location': 'الموقع', 'about.military': 'الخدمة العسكرية',
     'skills.title': 'المهارات والتقنيات', 'experience.title': 'الخبرات', 'projects.title': 'مشاريع مختارة',
     'contact.title': 'خلّينا نبني حاجة <span class="grad">مميزة</span> سوا.',
     'contact.sub': 'عندك فكرة مشروع أو محتاج باك إند Laravel قوي؟ تواصل معايا في أي وقت.',
