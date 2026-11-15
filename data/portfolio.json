@@ -1,0 +1,264 @@
+{
+    "profile": {
+        "name": "Mohamed Galal Abd-Elhalem",
+        "shortName": "Mohamed Galal",
+        "title": "Backend Developer",
+        "roles": [
+            "Backend Developer",
+            "Laravel Engineer",
+            "Full Stack Developer",
+            "API Architect"
+        ],
+        "location": "Alexandria, Egypt",
+        "birthDate": "1991-02-27",
+        "military": "Exempted",
+        "about": "Backend developer with 5+ years of experience building scalable web platforms with PHP & Laravel. I design RESTful APIs, multi-tenant SaaS systems, e-commerce and LMS platforms, real-time features and payment integrations — with a focus on clean architecture, performance and security.",
+        "email": "",
+        "phone": "",
+        "whatsapp": "",
+        "github": "",
+        "linkedin": "",
+        "photo": "assets/img/profile-formal.jpg",
+        "cv": "uploads/Mohamed-Galal-CV.pdf",
+        "education": "Industrial Secondary Technical Diploma — Alexandria, Egypt",
+        "name_ar": "محمد جلال عبد الحليم",
+        "shortName_ar": "محمد جلال",
+        "title_ar": "مطوّر باك إند",
+        "roles_ar": [
+            "مطوّر باك إند",
+            "مهندس Laravel",
+            "مطوّر Full Stack",
+            "مصمم واجهات API"
+        ],
+        "location_ar": "الإسكندرية، مصر",
+        "military_ar": "معفى",
+        "about_ar": "مطوّر باك إند بخبرة أكثر من 5 سنوات في بناء منصات ويب قابلة للتوسع باستخدام PHP و Laravel. أصمم واجهات RESTful API وأنظمة SaaS متعددة المستأجرين ومنصات تجارة إلكترونية وأنظمة تعليم إلكتروني، مع ميزات لحظية وتكامل بوابات الدفع — مع تركيز على البنية النظيفة والأداء والأمان.",
+        "education_ar": "دبلوم المدارس الثانوية الصناعية — الإسكندرية، مصر"
+    },
+    "stats": [
+        {
+            "value": 5,
+            "suffix": "+",
+            "label": "Years of experience",
+            "label_ar": "سنوات خبرة"
+        },
+        {
+            "value": 4,
+            "suffix": "",
+            "label": "Companies",
+            "label_ar": "شركات"
+        },
+        {
+            "value": 20,
+            "suffix": "+",
+            "label": "Projects delivered",
+            "label_ar": "مشروع منجز"
+        },
+        {
+            "value": 25,
+            "suffix": "%",
+            "label": "DAU growth at Trendk",
+            "label_ar": "نمو المستخدمين في Trendk"
+        }
+    ],
+    "skills": [
+        {
+            "name": "PHP",
+            "level": 95,
+            "category": "Backend"
+        },
+        {
+            "name": "Laravel",
+            "level": 95,
+            "category": "Backend"
+        },
+        {
+            "name": "RESTful APIs",
+            "level": 92,
+            "category": "Backend"
+        },
+        {
+            "name": "SQL Databases (MySQL)",
+            "level": 90,
+            "category": "Database"
+        },
+        {
+            "name": "Livewire",
+            "level": 88,
+            "category": "Full Stack"
+        },
+        {
+            "name": "Ajax",
+            "level": 90,
+            "category": "Frontend"
+        },
+        {
+            "name": "HTML & CSS",
+            "level": 85,
+            "category": "Frontend"
+        },
+        {
+            "name": "Payment Gateways & SMS Integrations",
+            "level": 92,
+            "category": "Integrations"
+        },
+        {
+            "name": "Real-time Systems with WebSockets",
+            "level": 82,
+            "category": "Integrations"
+        },
+        {
+            "name": "Multi-tenant SaaS Architecture",
+            "level": 85,
+            "category": "Backend"
+        }
+    ],
+    "experience": [
+        {
+            "role": "Backend Developer",
+            "company": "Trendk",
+            "location": "Remote",
+            "from": "01/2026",
+            "to": "Present",
+            "description": "Led the development of a custom CMS for a content-driven website using Laravel. Enhanced user engagement through personalized content delivery and streamlined editorial workflows, resulting in a 25% increase in daily active users.",
+            "role_ar": "مطوّر باك إند",
+            "location_ar": "عن بُعد",
+            "description_ar": "قدت تطوير نظام إدارة محتوى مخصص لموقع قائم على المحتوى باستخدام Laravel. حسّنت تفاعل المستخدمين من خلال تقديم محتوى مخصص وتبسيط سير العمل التحريري، مما أدى إلى زيادة المستخدمين النشطين يوميًا بنسبة 25%."
+        },
+        {
+            "role": "Full Stack Developer",
+            "company": "Marketopia",
+            "location": "Alexandria, Egypt",
+            "from": "11/2024",
+            "to": "01/2026",
+            "description": "Designing and implementing full-stack web applications using Laravel, Livewire, and modern web technologies. Driving end-to-end features, optimizing frontend-backend communications, and ensuring high-performance web solutions.",
+            "role_ar": "مطوّر Full Stack",
+            "location_ar": "الإسكندرية، مصر",
+            "description_ar": "تصميم وتنفيذ تطبيقات ويب متكاملة باستخدام Laravel و Livewire وتقنيات الويب الحديثة. تطوير الميزات من البداية للنهاية، وتحسين التواصل بين الواجهة والخادم، وضمان حلول ويب عالية الأداء."
+        },
+        {
+            "role": "Backend Developer",
+            "company": "Aquadic Software",
+            "location": "Alexandria, Egypt",
+            "from": "01/2024",
+            "to": "10/2024",
+            "description": "Architected and built scalable backend APIs and microservices using PHP Laravel. Optimized database queries and RESTful services to enhance platform stability, efficiency, and integration performance across distributed systems.",
+            "role_ar": "مطوّر باك إند",
+            "location_ar": "الإسكندرية، مصر",
+            "description_ar": "تصميم وبناء واجهات API وخدمات مصغّرة قابلة للتوسع باستخدام PHP Laravel. تحسين استعلامات قواعد البيانات وخدمات RESTful لرفع استقرار المنصة وكفاءتها وأداء التكامل بين الأنظمة الموزعة."
+        },
+        {
+            "role": "Backend Developer",
+            "company": "Alfares",
+            "location": "Remote",
+            "from": "01/2023",
+            "to": "06/2023",
+            "description": "Developed a feature-rich e-commerce platform using Laravel, focusing on seamless user experiences and secure transactions. Optimized for mobile and integrated with multiple payment gateways.",
+            "role_ar": "مطوّر باك إند",
+            "location_ar": "عن بُعد",
+            "description_ar": "تطوير منصة تجارة إلكترونية غنية بالميزات باستخدام Laravel، مع التركيز على تجربة مستخدم سلسة ومعاملات آمنة. محسّنة للموبايل ومتكاملة مع عدة بوابات دفع."
+        },
+        {
+            "role": "Freelance Web Developer",
+            "company": "Self-employed",
+            "location": "Remote",
+            "from": "2021",
+            "to": "Present",
+            "description": "Building web applications with Laravel, Livewire, Ajax, HTML and CSS. Designing customized solutions tailored to client needs, including e-commerce platforms, content management systems, and business management applications — delivered on time with high quality.",
+            "role_ar": "مطوّر ويب مستقل",
+            "location_ar": "عن بُعد",
+            "description_ar": "بناء تطبيقات ويب باستخدام Laravel و Livewire و Ajax و HTML و CSS. تصميم حلول مخصصة حسب احتياجات العملاء، تشمل منصات التجارة الإلكترونية وأنظمة إدارة المحتوى وتطبيقات إدارة الأعمال — مع التسليم في الموعد وبجودة عالية.",
+            "company_ar": "عمل حر"
+        }
+    ],
+    "projects": [
+        {
+            "title": "El Yousr LMS",
+            "subtitle": "Academy for paid courses",
+            "description": "Multi-tenant Learning Management System handling course sales with dynamic instance generation. Payment gateway integrations, WhatsApp API notifications and Vimeo video delivery.",
+            "tags": [
+                "Laravel",
+                "Livewire",
+                "MySQL",
+                "REST APIs",
+                "WhatsApp API",
+                "Vimeo"
+            ],
+            "link": "",
+            "image": "",
+            "featured": true,
+            "title_ar": "أكاديمية اليُسر",
+            "subtitle_ar": "أكاديمية للكورسات المدفوعة",
+            "description_ar": "نظام إدارة تعلّم متعدد المستأجرين لبيع الكورسات مع إنشاء نسخ ديناميكية لكل أكاديمية. تكامل مع بوابات الدفع، وإشعارات عبر WhatsApp API، وعرض الفيديوهات عبر Vimeo."
+        },
+        {
+            "title": "Elshrouk",
+            "subtitle": "Multi-tenant E-commerce",
+            "description": "Multi-tenant e-commerce platform supporting automated shop instance creation, with automated real-time synchronization with C# desktop POS systems.",
+            "tags": [
+                "Laravel",
+                "Livewire",
+                "MySQL",
+                "REST APIs",
+                "POS Sync"
+            ],
+            "link": "",
+            "image": "",
+            "featured": true,
+            "title_ar": "الشروق",
+            "subtitle_ar": "تجارة إلكترونية متعددة المتاجر",
+            "description_ar": "منصة تجارة إلكترونية متعددة المستأجرين تدعم إنشاء المتاجر تلقائيًا، مع مزامنة لحظية تلقائية مع أنظمة نقاط البيع المكتبية المبنية بـ C#."
+        },
+        {
+            "title": "Medawee",
+            "subtitle": "Medical appointments platform",
+            "description": "A digital platform that makes booking medical appointments with specialists across Yemen easy — streamlining the process and eliminating booking fees.",
+            "tags": [
+                "Laravel",
+                "Booking",
+                "MySQL"
+            ],
+            "link": "",
+            "image": "",
+            "featured": true,
+            "title_ar": "مداوي",
+            "subtitle_ar": "منصة حجز مواعيد طبية",
+            "description_ar": "منصة رقمية تسهّل حجز المواعيد الطبية مع الأطباء المتخصصين في اليمن — تبسّط عملية الحجز وتلغي رسوم الحجز."
+        },
+        {
+            "title": "Uber Women App — KSA",
+            "subtitle": "Smart transportation application",
+            "description": "Multi-platform ride-hailing backend: driver & passenger management, GPS tracking, real-time booking, Google Maps routing, distance & fare estimation, Firebase real-time notifications and secure payments.",
+            "tags": [
+                "Laravel",
+                "Google Maps",
+                "Firebase",
+                "Payments",
+                "Real-time"
+            ],
+            "link": "",
+            "image": "",
+            "featured": true,
+            "title_ar": "تطبيق أوبر للسيدات — السعودية",
+            "subtitle_ar": "تطبيق نقل ذكي",
+            "description_ar": "باك إند لتطبيق نقل متعدد المنصات: إدارة السائقين والركاب، تتبع GPS، حجز لحظي، مسارات Google Maps، حساب المسافة والأجرة، إشعارات لحظية عبر Firebase ومدفوعات آمنة."
+        },
+        {
+            "title": "MAWAD App",
+            "subtitle": "Building materials sales & management",
+            "description": "Advanced system for sales and distribution of building materials: products & inventory, order tracking, supplier coordination, customer data, analytical reports and integrated payment gateways.",
+            "tags": [
+                "Laravel",
+                "Inventory",
+                "Reports",
+                "Payments"
+            ],
+            "link": "",
+            "image": "",
+            "featured": false,
+            "title_ar": "تطبيق مواد",
+            "subtitle_ar": "إدارة ومبيعات مواد البناء",
+            "description_ar": "نظام متقدم لمبيعات وتوزيع مواد البناء: المنتجات والمخزون، تتبع الطلبات، التنسيق مع الموردين، بيانات العملاء، تقارير تحليلية وبوابات دفع متكاملة."
+        }
+    ]
+}

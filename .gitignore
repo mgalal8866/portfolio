@@ -1,0 +1,11 @@
+# Admin login (password hash) — generated automatically on first visit to /admin
+admin/credentials.php
+
+# Automatic backups created by the dashboard on every save
+data/backups/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
