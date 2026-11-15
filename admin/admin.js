@@ -89,6 +89,7 @@
       </div></div>
       <div class="card"><h2>Files</h2><div class="grid">
         ${fileInput('Profile photo', 'profile.photo', 'image/*')}${fileInput('CV (PDF)', 'profile.cv', 'application/pdf')}
+        <label class="f f--check f--full"><input type="checkbox" data-path="profile.cvHidden" ${get('profile.cvHidden') ? 'checked' : ''}> Hide CV from the website (download button + link)</label>
       </div></div>`,
     stats: () => `<div class="card">${listEditor('stats', s => `<b>${esc(s.value)}${esc(s.suffix)}</b> ${esc(s.label)}`,
       i => input('Number', `stats.${i}.value`, 'number') + input('Suffix', `stats.${i}.suffix`) + bi('Label', `stats.${i}.label`))}</div>`,

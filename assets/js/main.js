@@ -16,8 +16,8 @@ const DIR = RTL ? -1 : 1; // flips horizontal motion in RTL
 const I18N = {
   en: {
     'nav.about': 'About', 'nav.skills': 'Skills', 'nav.experience': 'Experience', 'nav.projects': 'Projects', 'nav.contact': 'Contact',
-    cv: 'Download CV','hero.hi': "Hi, I'm", 'hero.work': 'View my work', 'hero.talk': "Let's talk", 'hero.scroll': 'scroll',
-    'about.title': 'About me', 'about.location': 'Location', 'about.military': 'Military',
+    cv: 'Download CV', badge: 'Full Stack Developer', 'hero.hi': "Hi, I'm", 'hero.work': 'View my work', 'hero.talk': "Let's talk", 'hero.scroll': 'scroll',
+    'about.title': 'About me', 'about.location': 'Location',
     'skills.title': 'Skills & Stack', 'experience.title': 'Experience', 'projects.title': 'Selected Projects',
     'contact.title': 'Let\'s build something <span class="grad">great</span> together.',
     'contact.sub': 'Have a project in mind or need a solid Laravel backend? My inbox is open.',
@@ -27,8 +27,8 @@ const I18N = {
   },
   ar: {
     'nav.about': 'عنّي', 'nav.skills': 'المهارات', 'nav.experience': 'الخبرات', 'nav.projects': 'المشاريع', 'nav.contact': 'تواصل',
-    cv: 'تحميل السيرة الذاتية','hero.hi': 'أهلًا، أنا', 'hero.work': 'شاهد أعمالي', 'hero.talk': 'يلا نتكلم', 'hero.scroll': 'مرّر',
-    'about.title': 'نبذة عنّي', 'about.location': 'الموقع', 'about.military': 'الخدمة العسكرية',
+    cv: 'تحميل السيرة الذاتية', badge: 'مطوّر Full Stack', 'hero.hi': 'أهلًا، أنا', 'hero.work': 'شاهد أعمالي', 'hero.talk': 'يلا نتكلم', 'hero.scroll': 'مرّر',
+    'about.title': 'نبذة عنّي', 'about.location': 'الموقع',
     'skills.title': 'المهارات والتقنيات', 'experience.title': 'الخبرات', 'projects.title': 'مشاريع مختارة',
     'contact.title': 'خلّينا نبني حاجة <span class="grad">مميزة</span> سوا.',
     'contact.sub': 'عندك فكرة مشروع أو محتاج باك إند Laravel قوي؟ تواصل معايا في أي وقت.',
@@ -74,7 +74,8 @@ function render(d) {
   document.title = `${lp.shortName || lp.name} — ${lp.title}`;
   $('#photo').alt = lp.name || '';
   if (p.photo) $('#photo').src = p.photo;
-  $$('[data-cv]').forEach(a => { if (p.cv) a.href = p.cv; else a.remove(); });
+  const cv = p.cvHidden ? '' : p.cv; // temporarily hidden from the dashboard (Profile → Files)
+  $$('[data-cv]').forEach(a => { if (cv) a.href = cv; else a.remove(); });
   $('#year').textContent = new Date().getFullYear();
 
   // marquee
@@ -142,7 +143,7 @@ function render(d) {
   if (p.phone) links.push([`tel:${p.phone}`, p.phone]);
   if (p.linkedin) links.push([p.linkedin, 'LinkedIn']);
   if (p.github) links.push([p.github, 'GitHub']);
-  if (p.cv) links.push([p.cv, t('cv'), false, true]);
+  if (cv) links.push([cv, t('cv'), false, true]);
   $('#contactLinks').innerHTML = links.map(([h, label, primary, dl, cls = '', icon = '']) =>
     `<a class="btn ${primary ? '' : 'btn--ghost'} ${cls} magnetic" href="${esc(h)}" ${dl ? 'download' : 'target="_blank" rel="noopener"'}>${icon}<span>${esc(label)}</span></a>`).join('');
 }
@@ -437,7 +438,6 @@ function animations() {
   // projects
   gsap.from('.project', { y: 120, opacity: 0, rotateX: -25, stagger: .12, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: '#projectsGrid', start: 'top 85%' } });
   gsap.from('.filters button', { y: 20, opacity: 0, stagger: .04, duration: .8, ease: 'expo.out', scrollTrigger: { trigger: '#filters', start: 'top 90%' } });
-  if (!$('#waFloat').hidden) gsap.from('#waFloat', { scale: 0, opacity: 0, duration: .9, ease: 'back.out(2.5)', delay: 2.6 });
   gsap.to('.marquee__track', { xPercent: -8, ease: 'none', scrollTrigger: { trigger: '.marquee', scrub: 1 } });
 }
 

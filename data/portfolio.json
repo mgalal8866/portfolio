@@ -5,7 +5,7 @@
         "title": "Backend Developer",
         "roles": [
             "Backend Developer",
-            "Laravel Engineer",
+            "Software Engineer",
             "Full Stack Developer",
             "API Architect"
         ],
@@ -15,7 +15,7 @@
         "about": "Backend developer with 5+ years of experience building scalable web platforms with PHP & Laravel. I design RESTful APIs, multi-tenant SaaS systems, e-commerce and LMS platforms, real-time features and payment integrations — with a focus on clean architecture, performance and security.",
         "email": "",
         "phone": "",
-        "whatsapp": "",
+        "whatsapp": "201024346011",
         "github": "",
         "linkedin": "",
         "photo": "assets/img/profile-formal.jpg",
@@ -26,14 +26,15 @@
         "title_ar": "مطوّر باك إند",
         "roles_ar": [
             "مطوّر باك إند",
-            "مهندس Laravel",
+            "مهندس برمجيات",
             "مطوّر Full Stack",
             "مصمم واجهات API"
         ],
         "location_ar": "الإسكندرية، مصر",
         "military_ar": "معفى",
         "about_ar": "مطوّر باك إند بخبرة أكثر من 5 سنوات في بناء منصات ويب قابلة للتوسع باستخدام PHP و Laravel. أصمم واجهات RESTful API وأنظمة SaaS متعددة المستأجرين ومنصات تجارة إلكترونية وأنظمة تعليم إلكتروني، مع ميزات لحظية وتكامل بوابات الدفع — مع تركيز على البنية النظيفة والأداء والأمان.",
-        "education_ar": "دبلوم المدارس الثانوية الصناعية — الإسكندرية، مصر"
+        "education_ar": "دبلوم المدارس الثانوية الصناعية — الإسكندرية، مصر",
+        "cvHidden": true
     },
     "stats": [
         {
