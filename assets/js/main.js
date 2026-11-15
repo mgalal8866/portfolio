@@ -21,7 +21,7 @@ const I18N = {
     'skills.title': 'Skills & Stack', 'experience.title': 'Experience', 'projects.title': 'Selected Projects',
     'contact.title': 'Let\'s build something <span class="grad">great</span> together.',
     'contact.sub': 'Have a project in mind or need a solid Laravel backend? My inbox is open.',
-    footer: 'Built with Laravel-grade care ✦ Three.js ✦ GSAP', all: 'All', featured: '★ Featured', visit: 'Visit project ↗',
+    all: 'All', featured: '★ Featured', visit: 'Visit project ↗',
     present: 'Present', whatsapp: 'WhatsApp', 'wa.tip': 'Chat on WhatsApp', 'wa.msg': "Hi Mohamed, I saw your portfolio and I'd like to talk about a project.",
     switchTo: 'ع', switchLabel: 'التبديل إلى العربية'
   },
@@ -32,7 +32,7 @@ const I18N = {
     'skills.title': 'المهارات والتقنيات', 'experience.title': 'الخبرات', 'projects.title': 'مشاريع مختارة',
     'contact.title': 'خلّينا نبني حاجة <span class="grad">مميزة</span> سوا.',
     'contact.sub': 'عندك فكرة مشروع أو محتاج باك إند Laravel قوي؟ تواصل معايا في أي وقت.',
-    footer: 'صُنع بعناية ✦ Three.js ✦ GSAP', all: 'الكل', featured: '★ مميز', visit: 'زيارة المشروع ↖',
+    all: 'الكل', featured: '★ مميز', visit: 'زيارة المشروع ↖',
     present: 'حتى الآن', whatsapp: 'واتساب', 'wa.tip': 'كلّمني على واتساب', 'wa.msg': 'أهلًا محمد، شفت البورتفوليو بتاعك وحابب نتكلم في مشروع.',
     switchTo: 'EN', switchLabel: 'Switch to English'
   }
